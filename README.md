@@ -15,9 +15,6 @@ Create smart variables/models in a functional reactive style
 
 
 
-
-
-
 var myModel = new SmartVar({
                 firstName: 'mark','lastName: 'norman', 
                 displayName: (parent) => { parent.registerDependency(displayName), [firstName, lastName]) }
