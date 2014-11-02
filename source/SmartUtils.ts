@@ -2,8 +2,9 @@
  * Created by user on 10/09/2014.
  */
 ///<reference path='../typescript-node-definitions/node.d.ts'/>
+///<reference path="SmartVar.ts"/>
 
-
+//
 class SmartUtils {
     isObjLiteral(_obj) {
         var _test  = _obj;

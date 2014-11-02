@@ -2,6 +2,7 @@
 * Created by user on 10/09/2014.
 */
 ///<reference path='../typescript-node-definitions/node.d.ts'/>
+//
 var Stream = (function () {
     function Stream() {
         this.subscribers = [];

@@ -11,6 +11,7 @@ var smartUtils = require('./SmartUtils.js');
 utils.requireClass('SmartUtils', 'SmartUtils');
 utils.requireClass('Stream', 'Stream');
 
+//
 class SmartVar extends Stream {
     private _self = this;
     private dependantProperties = {};

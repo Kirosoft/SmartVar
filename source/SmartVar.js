@@ -16,6 +16,7 @@ var smartUtils = require('./SmartUtils.js');
 utils.requireClass('SmartUtils', 'SmartUtils');
 utils.requireClass('Stream', 'Stream');
 
+//
 var SmartVar = (function (_super) {
     __extends(SmartVar, _super);
     function SmartVar(objModel) {
@@ -77,7 +78,11 @@ var SmartVar = (function (_super) {
                 if (computedFunc) {
                     currentValue = computedFunc(value);
                 } else if (smartVar) {
-                    currentValue = smartVar[smartAttr]();
+                    if (utils.isArray(smartVar[smartAttr])) {
+                        currentValue = smartVar[smartAttr];
+                    } else {
+                        currentValue = smartVar[smartAttr]();
+                    }
                 }
                 return currentValue;
             };

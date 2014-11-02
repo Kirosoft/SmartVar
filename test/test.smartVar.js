@@ -180,8 +180,40 @@ module.exports = {
 
 
         test.done();
-    }
+    },
+    testDocsExample: function(test) {
+        test.expect(3);
 
+        var screwdrivers = new SmartVar( { posisizes: [35,2,4] });
+        var hammers = new SmartVar({ hammerTypes: ['claw'] });
+
+        // Composite SmartVar with two linked SmartVars and an auto-computed property
+        var toolkit = new SmartVar({ posisizes: screwdrivers, hammerTypes: hammers, numTools: function (parent) {
+            parent.registerDependency('numtools', ['screwdrivers', 'hammers']);
+
+            console.log("running tools count: ");
+            var screwdriverCount = parent.posisizes().length;
+            console.log('There are: ' + screwdriverCount + " screwdrivers");
+            var hammerCount = parent.hammerTypes().length;
+            console.log('There are: ' + hammerCount + " hammers");
+            console.log("-------------------");
+            return hammerCount + screwdriverCount;
+
+        }});
+
+        screwdrivers.posisizes.push(5);
+
+        test.ok(toolkit.numTools() === 5, 'There should be more tools');
+
+
+        hammers.hammerTypes.push("pan");
+        test.ok(toolkit.numTools() === 6, 'There should be more tools');
+
+        // TODO: Tidy up notation here
+        test.ok(toolkit.hammerTypes()[1]() === "pan", 'Missing pan hammer');
+        test.done();
+
+    }
 };
 
 //        exports.testSomething = function(test) {

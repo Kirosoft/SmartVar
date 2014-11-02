@@ -3,6 +3,7 @@
  */
 ///<reference path='../typescript-node-definitions/node.d.ts'/>
 
+//
 class Stream {
     private subscribers = [];
     private processFunc: any = null;
