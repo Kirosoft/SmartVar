@@ -5,7 +5,7 @@ SmartVar
 
 
 
-An experimental implementation of reactive style variables/models.
+An experimental implementation of compose-able reactive style variables/models in Javascript.
 Here's why? [SmartVar documentation](docs/MutableVsImmutable.md)
 
 

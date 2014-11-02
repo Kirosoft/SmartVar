@@ -2,7 +2,7 @@
     "name": "smartvar",
     "description": "create smart variables in a functional reactive style",
     "author": "mark@kirosoft.co.uk> (https://github.com/Kirosoft/SmartVar)",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "main": "app.js",
     "repository": {
         "type": "git",
