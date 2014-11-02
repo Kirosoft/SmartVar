@@ -3,7 +3,12 @@ SmartVar
 
 ![Build Status](https://travis-ci.org/Kirosoft/SmartVar.svg)
 
+
+
 An experimental implementation of reactive style variables/models.
+Here's why? [SmartVar documentation](docs/MutableVsImmutable.md)
+
+
 Dependant properties between models are updated automatically and functions referencing properties are recomputed automatically with changes.
 
 Example useage:
