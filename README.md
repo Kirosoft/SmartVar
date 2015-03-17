@@ -6,7 +6,6 @@ SmartVar
 
 
 An experimental implementation of compose-able reactive style variables/models in Javascript.
-Here's why? [SmartVar documentation](docs/MutableVsImmutable.md)
 
 
 Dependant properties between models are updated automatically and functions referencing properties are recomputed automatically with changes.
