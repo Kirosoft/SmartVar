@@ -71,3 +71,16 @@ Add, support for stream based updates/changes
         
         
         
+    var t1 = new Sequence.arraySequence([1,2,3,4]);
+    var t2 = new ArraySequence([5,6,7,8]);
+    var t3 = new ArraySequence([9,10,11,12]);
+
+    var res = t1.transform(incXfr)
+                .merge(t2, t3)
+                .transform(incXfr)      // map op
+                //.transform(isEvenXfr)
+                .transform(debugXfr, 'merged event stream: ')
+                .transducer(aggregateXfr)
+                .transform(debugXfr, 'aggregate event stream: ')
+                .toArray(true);
+                
